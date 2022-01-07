@@ -16,7 +16,7 @@ namespace Employees.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly IDatabaseContext _databaseContext;
-        DatabaseContext database;
+        
         public EmployeesController(IDatabaseContext databaseContext)
         {
             _databaseContext = databaseContext;
@@ -24,7 +24,7 @@ namespace Employees.Controllers
         [HttpGet]
         public IEnumerable<Employee> Get()
         {
-            return database.UsersEmployee.ToList();
+            return databaseContext.UsersEmployee.ToList();
         }
 
         // GET api/<EmployeesController>/5
