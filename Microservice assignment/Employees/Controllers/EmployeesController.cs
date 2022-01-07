@@ -48,7 +48,7 @@ namespace Employees.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
 
